@@ -1,0 +1,29 @@
+---
+title: "Корзина"
+---
+
+<div id="cart-items"></div>
+<p>Итого: <span id="cart-total">0</span> руб.</p>
+<button onclick="sendOrder()">Заказать (через Telegram)</button>
+
+<div class="qr-payment">
+    <h3>Оплата по QR-коду (СБП)</h3>
+    <p>Для оплаты: оформите заказ, мы пришлем вам QR-код в Telegram.</p>
+</div>
+
+<script>
+    function renderCart() {
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        const container = document.getElementById('cart-items');
+        container.innerHTML = cart.map(item => `<p>${item.name} - ${item.price} руб.</p>`).join('');
+        document.getElementById('cart-total').innerText = cart.reduce((sum, item) => sum + item.price, 0);
+    }
+
+    function sendOrder() {
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        const message = `Заказ:%0A` + cart.map(i => `${i.name} - ${i.price} руб.`).join('%0A');
+        window.location.href = `https://t.me/your_telegram_bot_username?text=${message}`;
+    }
+
+    renderCart();
+</script>
