@@ -15,13 +15,16 @@ def parse_markdown(file_path):
     if content.startswith('---'):
         parts = content.split('---', 2)
         metadata = yaml.safe_load(parts[1])
-        body = markdown.markdown(parts[2])
-        metadata['content'] = body
+        # body = markdown.markdown(parts[2]) # Оставим как текст
+        metadata['description'] = parts[2].strip()
         return metadata
     return None
 
 def generate_catalog():
     products = []
+    if not os.path.exists(os.path.dirname(OUTPUT_FILE)):
+        os.makedirs(os.path.dirname(OUTPUT_FILE))
+        
     for filename in os.listdir(CONTENT_DIR):
         if filename.endswith('.md'):
             product = parse_markdown(os.path.join(CONTENT_DIR, filename))
