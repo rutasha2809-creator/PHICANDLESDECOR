@@ -23,7 +23,7 @@ jobs:
         run: pip install PyYAML markdown
 
       - name: Generate catalog
-        run: python generate_catalog.py
+        run: echo "Skipping auto-generation for now"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
