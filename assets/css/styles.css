@@ -144,6 +144,19 @@ h4 {
     padding: 12px 20px;
     font-size: 0.8rem;
     width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.aroma-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    background: #F9F9F9;
+    font-size: 0.85rem;
+    color: #3D3D3D;
+    margin-bottom: 10px;
 }
 
 /* Footer */
