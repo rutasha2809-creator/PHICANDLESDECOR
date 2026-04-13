@@ -14,16 +14,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: pip install PyYAML markdown
-
-      - name: Generate catalog
-        run: echo "Skipping auto-generation for now"
+          node-version: '20'
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
