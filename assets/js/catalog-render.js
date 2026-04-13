@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         
-                        ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        ${product.aroma_options && product.aroma_options.length > 0 ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
                         
-                        ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        ${product.color_options && product.color_options.length > 0 ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
                         
                         <p class="product-price">${product.price} ₽</p>
                         <button class="btn" onclick="addToCart(${product.id})">В корзину</button>
