@@ -4,62 +4,46 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Каталог — PHICANDLES</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>PHICANDLES — Каталог</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
     <header class="header">
-        <div class="container nav">
+        <nav class="container nav">
             <a href="index.html">Главная</a>
             <a href="catalog.html">Каталог</a>
             <a href="cart.html">Корзина</a>
             <a href="contacts.html">Контакты</a>
-            <a href="privacy.html">152-ФЗ</a>
-        </div>
+        </nav>
     </header>
-    <main class="container">
+
+    <main class="container" style="padding: 60px 0;">
         <h1>Каталог</h1>
-        <label>Категория</label>
-        <select id="filterCategory">
-            <option value="all">Все</option>
-            <option value="classic">Classic</option>
-            <option value="decor">Decor</option>
-            <option value="mini">Mini</option>
-            <option value="melts">Melts</option>
-            <option value="flowers">Flowers</option>
-        </select>
-        <div id="catalogGrid" class="grid" style="margin-top:16px">
-            <!-- Карточки товаров будут вставлены здесь -->
+        <div class="product-grid" style="margin-top: 40px;">
+            <div class="product-card">
+                <h3>Фисташковая роза</h3>
+                <p>Нежный аромат и утонченная форма.</p>
+                <a class="btn" href="#">Подробнее</a>
+            </div>
+            <div class="product-card">
+                <h3>Зефирная роза</h3>
+                <p>Воздушная эстетика для вашего дома.</p>
+                <a class="btn" href="#">Подробнее</a>
+            </div>
+            <div class="product-card">
+                <h3>Пион в стакане</h3>
+                <p>Классика в изысканном исполнении.</p>
+                <a class="btn" href="#">Подробнее</a>
+            </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const grid = document.getElementById('catalogGrid');
-                grid.innerHTML = products.map(product => `
-                    <div class="product-card">
-                        <img src="${product.image}" alt="${product.title}" style="width:100%">
-                        <h3>${product.title}</h3>
-                        <p>${product.description}</p>
-                        <p><strong>${product.price} руб.</strong></p>
-                    </div>
-                `).join('');
-            });
-        </script>
     </main>
+
     <footer class="footer">
         <div class="container">
             <p>© PHICANDLES. Все права защищены.</p>
-            <p>Реквизиты: ООО "ФИ-КЕНДЛС", ИНН 1234567890</p>
-            <p><a href="privacy.html">Политика обработки персональных данных (152-ФЗ)</a></p>
         </div>
     </footer>
-    <script src="assets/js/common.js"></script>
-    <script src="assets/js/products.js"></script>
-    <script src="assets/js/cart.js"></script>
-    <script src="assets/js/catalog.js"></script>
 </body>
 
 </html>

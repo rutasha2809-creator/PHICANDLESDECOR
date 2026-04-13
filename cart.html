@@ -1,29 +1,43 @@
----
-title: "Корзина"
----
+<!doctype html>
+<html lang="ru">
 
-<div id="cart-items"></div>
-<p>Итого: <span id="cart-total">0</span> руб.</p>
-<button onclick="sendOrder()">Заказать (через Telegram)</button>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHICANDLES — Корзина</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
 
-<div class="qr-payment">
-    <h3>Оплата по QR-коду (СБП)</h3>
-    <p>Для оплаты: оформите заказ, мы пришлем вам QR-код в Telegram.</p>
-</div>
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="cart.html">Корзина</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
 
-<script>
-    function renderCart() {
-        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-        const container = document.getElementById('cart-items');
-        container.innerHTML = cart.map(item => `<p>${item.name} - ${item.price} руб.</p>`).join('');
-        document.getElementById('cart-total').innerText = cart.reduce((sum, item) => sum + item.price, 0);
-    }
+    <main class="container" style="padding: 60px 0;">
+        <h1>Корзина</h1>
+        <div id="cart-items" style="margin-top: 40px;">
+            <p>Ваша корзина пуста.</p>
+        </div>
+        <div style="margin-top: 60px; padding: 40px; background: #fff; border-radius: 8px; border: 1px solid #e8e4e0;">
+            <h2>Оплата и доставка</h2>
+            <p>Оплатить заказ можно по QR-коду (СБП).</p>
+            <div
+                style="margin-top: 20px; width: 200px; height: 200px; background: #eee; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">
+                [QR Code]
+            </div>
+        </div>
+    </main>
 
-    function sendOrder() {
-        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-        const message = `Заказ:%0A` + cart.map(i => `${i.name} - ${i.price} руб.`).join('%0A');
-        window.location.href = `https://t.me/your_telegram_bot_username?text=${message}`;
-    }
+    <footer class="footer">
+        <div class="container">
+            <p>© PHICANDLES. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
 
-    renderCart();
-</script>
+</html>
