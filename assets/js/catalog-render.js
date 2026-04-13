@@ -48,13 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="btn add-to-cart-btn" data-product-id="${product.id}">В корзину</button>
                     `;
                     card.querySelector('.aroma-list')?.addEventListener('click', (e) => {
-                        if (e.target.classList.contains('aroma-chip')) {
-                            window.selectAroma(e.target, e.target.textContent);
+                        const chip = e.target.closest('.aroma-chip');
+                        if (chip && card.querySelector('.aroma-list').contains(chip)) {
+                            window.selectAroma(chip, chip.textContent);
                         }
                     });
                     card.querySelector('.color-list')?.addEventListener('click', (e) => {
-                        if (e.target.classList.contains('color-swatch')) {
-                            window.selectColor(e.target, e.target.title);
+                        const swatch = e.target.closest('.color-swatch');
+                        if (swatch && card.querySelector('.color-list').contains(swatch)) {
+                            window.selectColor(swatch, swatch.title);
                         }
                     });
                     const btn = card.querySelector('.add-to-cart-btn');
