@@ -47,15 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="product-price">${product.price} ₽</p>
                         <button class="btn add-to-cart-btn" data-product-id="${product.id}">В корзину</button>
                     `;
-                    card.querySelectorAll('.aroma-chip').forEach(chip => {
-                        chip.addEventListener('click', () => {
-                            window.selectAroma(chip, chip.textContent);
-                        });
+                    card.querySelector('.aroma-list')?.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('aroma-chip')) {
+                            window.selectAroma(e.target, e.target.textContent);
+                        }
                     });
-                    card.querySelectorAll('.color-swatch').forEach(swatch => {
-                        swatch.addEventListener('click', () => {
-                            window.selectColor(swatch, swatch.title);
-                        });
+                    card.querySelector('.color-list')?.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('color-swatch')) {
+                            window.selectColor(e.target, e.target.title);
+                        }
                     });
                     const btn = card.querySelector('.add-to-cart-btn');
                     btn.addEventListener('click', () => {
