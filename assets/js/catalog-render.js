@@ -30,17 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.className = 'product-card';
                     card.dataset.productId = product.id;
 
-                    const aromaOptions = product.aroma_options.map(aroma => `<div class="aroma-chip" onclick="selectAroma(this, '${aroma}')">${aroma}</div>`).join('');
-                    const colorOptions = product.color_options.map(color => `<div class="color-swatch" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" onclick="selectColor(this, '${color}')" title="${color}"></div>`).join('');
+                    const aromaOptions = (product.aroma_options || []).map(aroma => `<div class="aroma-chip" onclick="selectAroma(this, '${aroma}')">${aroma}</div>`).join('');
+                    const colorOptions = (product.color_options || []).map(color => `<div class="color-swatch" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" onclick="selectColor(this, '${color}')" title="${color}"></div>`).join('');
 
                     card.innerHTML = `
                         <img src="${product.image_path}" alt="${product.name}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         
-                        ${product.aroma_options && product.aroma_options.length > 0 ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
                         
-                        ${product.color_options && product.color_options.length > 0 ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
                         
                         <p class="product-price">${product.price} ₽</p>
                         <button class="btn" onclick="addToCart(${product.id})">В корзину</button>
