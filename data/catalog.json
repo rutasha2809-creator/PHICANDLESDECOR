@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Фисташковая роза",
         "price": 2500,
-        "description": "Изысканное сочетание декора и аромата в чаше из акрилового гипса.",
+        "description": "Изысканное сочетание декора и аромата в чаше из акрилового гипса ручной работы.",
         "image_path": "flowers/flower_compositions/pistache_rose.jpg",
         "category": "Цветочная коллекция",
         "aroma_options": [
@@ -97,10 +97,10 @@
     },
     {
         "id": 9,
-        "name": "Грание свечения (Макси)",
+        "name": "Макси",
         "price": 1500,
         "description": "Архитектурная классика, 21 см.",
-        "image_path": "classic/table_candles/soy_candles.png",
+        "image_path": "classic/facets/maxi.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -109,10 +109,10 @@
     },
     {
         "id": 10,
-        "name": "Грание свечения (Миди)",
+        "name": "Миди",
         "price": 900,
         "description": "Классическая цилиндрическая форма, 16 см.",
-        "image_path": "classic/table_candles/soy_candles.png",
+        "image_path": "classic/facets/midi.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -121,10 +121,10 @@
     },
     {
         "id": 11,
-        "name": "Грание свечения (Мини)",
+        "name": "Мини",
         "price": 1200,
         "description": "Классическая цилиндрическая форма, 13 см.",
-        "image_path": "classic/table_candles/soy_candles.png",
+        "image_path": "classic/facets/mini.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -364,7 +364,7 @@
         "name": "Пасхальный заяц",
         "price": 2500,
         "description": "Эксклюзивный пасхальный арт-объект.",
-        "image_path": "easter/easter_rabbit/easter_rabbit.png",
+        "image_path": "easter/easter_rabbit/white_rabbit.png",
         "category": "Пасхальная коллекция",
         "aroma_options": [
             "Лаванда",
