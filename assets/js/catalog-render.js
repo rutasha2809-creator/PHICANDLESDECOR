@@ -9,11 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
                 card.innerHTML = `
-                    <img src="${product.image_path}" alt="${product.name}" style="width: 100%; height: auto; margin-bottom: 15px;">
-                    <p style="font-size: 0.8rem; color: #997950; text-transform: uppercase; letter-spacing: 1px;">${product.category}</p>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">${product.name}</h3>
-                    <p style="margin-bottom: 15px; color: #666;">${product.description}</p>
-                    <p style="font-weight: 700; margin-bottom: 20px;">${product.price} ₽</p>
+                    <img src="${product.image_path}" 
+                         alt="${product.name}" 
+                         onerror="this.src='assets/placeholder.png'; this.onerror=null;"
+                         style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 15px;">
+                    <p class="product-category">${product.category}</p>
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <p class="product-price">${product.price} ₽</p>
                     <button class="btn" onclick="addToCart(${product.id})">В корзину</button>
                 `;
                 productGrid.appendChild(card);
