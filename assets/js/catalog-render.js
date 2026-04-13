@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.className = 'product-card';
                     card.dataset.productId = product.id;
 
-                    const aromaOptions = (product.aroma_options || []).map(aroma => `<div class="aroma-chip" onclick="selectAroma(this, '${aroma}')">${aroma}</div>`).join('');
-                    const colorOptions = (product.color_options || []).map(color => `<div class="color-swatch" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" onclick="selectColor(this, '${color}')" title="${color}"></div>`).join('');
+                    const aromaOptions = (product.aroma_options || []).map(aroma => `<div class="aroma-chip" role="button" tabindex="0">${aroma}</div>`).join('');
+                    const colorOptions = (product.color_options || []).map(color => `<div class="color-swatch" role="button" tabindex="0" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" title="${color}"></div>`).join('');
 
                     card.innerHTML = `
                         <img src="${product.image_path}" alt="${product.name}" 
@@ -45,8 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
                         
                         <p class="product-price">${product.price} ₽</p>
-                        <button class="btn" onclick="addToCart(${product.id})">В корзину</button>
+                        <button class="btn add-to-cart-btn" data-product-id="${product.id}">В корзину</button>
                     `;
+                    card.querySelectorAll('.aroma-chip').forEach(chip => {
+                        chip.addEventListener('click', () => {
+                            window.selectAroma(chip, chip.textContent);
+                        });
+                    });
+                    card.querySelectorAll('.color-swatch').forEach(swatch => {
+                        swatch.addEventListener('click', () => {
+                            window.selectColor(swatch, swatch.title);
+                        });
+                    });
+                    const btn = card.querySelector('.add-to-cart-btn');
+                    btn.addEventListener('click', () => {
+                        const color = card.dataset.selectedColor;
+                        console.log('Выбранный цвет:', color);
+                        window.addToCart(product.id);
+                    });
                     productGrid.appendChild(card);
                 });
             });
