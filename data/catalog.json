@@ -3,24 +3,26 @@
         "id": 1,
         "name": "Фисташковая роза",
         "price": 2500,
-        "description": "Изысканное сочетание декора и аромата в чаше из акрилового гипса ручной работы.",
+        "description": "Изысканное сочетание декора и аромата. Композиция выполнена в чаше из акрилового гипса ручной работы и украшена детально проработанными свечами в форме роз и пионов.",
         "image_path": "flowers/flower_compositions/pistache_rose.jpg",
         "category": "Цветочная коллекция",
         "aroma_options": [
-            "Ваниль",
-            "Хлопок"
+            "Французская сирень",
+            "Лесной ландыш",
+            "Ваниль"
         ]
     },
     {
         "id": 2,
         "name": "Зефирная роза",
         "price": 3400,
-        "description": "Воздушная эстетика для вашего дома. Нежный пудровый аромат.",
+        "description": "Воздушная эстетика для вашего дома. Изысканное сочетание декора и аромата в чаше из акрилового гипса ручной работы.",
         "image_path": "flowers/flower_compositions/zefir_rose.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
-            "Ваниль",
-            "Хлопок"
+            "Французская сирень",
+            "Лесной ландыш",
+            "Ваниль"
         ]
     },
     {
@@ -31,80 +33,87 @@
         "image_path": "flowers/flower_compositions/rose_set.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
-            "Ваниль",
-            "Хлопок"
+            "Французская сирень",
+            "Лесной ландыш",
+            "Ваниль"
         ]
     },
     {
         "id": 4,
         "name": "Кувшинка",
         "price": 1700,
-        "description": "Лаконичная и нежная ароматическая свеча.",
+        "description": "Лаконичная и нежная ароматическая свеча в фактурном кашпо из акрилового гипса.",
         "image_path": "flowers/flower_decor/kuvsinka.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
             "Хлопок",
-            "Лаванда"
+            "Лаванда",
+            "Сандаловое дерево"
         ]
     },
     {
         "id": 5,
         "name": "Хризантема",
         "price": 1350,
-        "description": "Элегантное воплощение чистоты.",
+        "description": "Элегантное воплощение чистоты. Свеча в фактурном кашпо из акрилового гипса.",
         "image_path": "flowers/flower_decor/chrysanthemum.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
             "Хлопок",
-            "Лаванда"
+            "Лаванда",
+            "Сандаловое дерево"
         ]
     },
     {
         "id": 6,
         "name": "Летний луг",
         "price": 1600,
-        "description": "Яркая композиция в прозрачном стекле.",
+        "description": "Яркая композиция в прозрачном стекле, украшена восковыми ромашками.",
         "image_path": "flowers/flower_decor/summer_meadow.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
             "Хлопок",
-            "Лаванда"
+            "Лаванда",
+            "Сандаловое дерево"
         ]
     },
     {
         "id": 7,
         "name": "Пион",
         "price": 1500,
-        "description": "Роскошный цветочный декор.",
+        "description": "Роскошный цветочный декор, вручную выполненный пион.",
         "image_path": "flowers/flower_glass/pion.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
             "Хлопок",
-            "Лаванда"
+            "Лаванда",
+            "Сандаловое дерево"
         ]
     },
     {
         "id": 8,
         "name": "Фиалка",
         "price": 1500,
-        "description": "Нежность и изысканный стиль.",
+        "description": "Нежность и изысканный стиль, украшена реалистичными фиалками.",
         "image_path": "flowers/flower_glass/fialka.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
             "Хлопок",
-            "Лаванда"
+            "Лаванда",
+            "Сандаловое дерево"
         ]
     },
     {
         "id": 9,
         "name": "Макси",
         "price": 1500,
-        "description": "Архитектурная классика, 21 см.",
+        "description": "Архитектурная классика, 21 см, ритмичный рельефный дизайн.",
         "image_path": "classic/facets/maxi.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
-            "Ваниль"
+            "Ваниль",
+            "Кашемировый мускус"
         ]
     },
     {
@@ -116,7 +125,8 @@
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
-            "Ваниль"
+            "Ваниль",
+            "Кашемировый мускус"
         ]
     },
     {
@@ -128,14 +138,15 @@
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
-            "Ваниль"
+            "Ваниль",
+            "Кашемировый мускус"
         ]
     },
     {
         "id": 12,
         "name": "Античная колонна",
         "price": 850,
-        "description": "Элегантность времени, воплощенная в воске.",
+        "description": "Классическая эстетика в форме античной колонны с четкими желобками.",
         "image_path": "classic/columns/antique_column.png",
         "category": "Коллекция Классик",
         "aroma_options": [
@@ -147,7 +158,7 @@
         "id": 13,
         "name": "Цветочная колонна",
         "price": 920,
-        "description": "Настоящий цветущий сад в воске.",
+        "description": "Настоящий цветущий сад в воске, покрыта объемными цветами.",
         "image_path": "classic/columns/flower_column.png",
         "category": "Коллекция Классик",
         "aroma_options": [
@@ -169,9 +180,31 @@
     },
     {
         "id": 15,
+        "name": "Свечи из пчелиного воска",
+        "price": 750,
+        "description": "Традиции и уют, 3 штуки в наборе, 20 см.",
+        "image_path": "classic/table_candles/beeswax_candles.png",
+        "category": "Коллекция Классик",
+        "aroma_options": [
+            "Без аромата"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Свечи из соевого воска",
+        "price": 750,
+        "description": "Традиции и уют, 3 штуки в наборе, 20 см.",
+        "image_path": "classic/table_candles/soy_candles.png",
+        "category": "Коллекция Классик",
+        "aroma_options": [
+            "Без аромата"
+        ]
+    },
+    {
+        "id": 17,
         "name": "Интерьерный набор Арт Деко",
         "price": 1100,
-        "description": "Изысканное сочетание формы и фактуры.",
+        "description": "Изысканное сочетание вазы и подноса, уникальная мраморная заливка.",
         "image_path": "decor/artdeco_set.png",
         "category": "Коллекция Декор",
         "aroma_options": [
@@ -180,10 +213,10 @@
         ]
     },
     {
-        "id": 16,
+        "id": 18,
         "name": "Интерьерный набор Минимализм",
         "price": 1500,
-        "description": "Чистота линий и безупречный монохром.",
+        "description": "Стакан и поднос для эстетов минимализма.",
         "image_path": "decor/minimalism_set.png",
         "category": "Коллекция Декор",
         "aroma_options": [
@@ -192,10 +225,10 @@
         ]
     },
     {
-        "id": 17,
-        "name": "Интерьерная свеча Изящные линии",
+        "id": 19,
+        "name": "Изящные линии",
         "price": 1500,
-        "description": "Авторский стакан с рельефным узором.",
+        "description": "Авторский стакан из гипса с рельефным цветочным узором.",
         "image_path": "decor/elegant_lines.png",
         "category": "Коллекция Декор",
         "aroma_options": [
@@ -204,10 +237,10 @@
         ]
     },
     {
-        "id": 18,
-        "name": "Интерьерная свеча Роза Инталия",
+        "id": 20,
+        "name": "Роза Инталия",
         "price": 1800,
-        "description": "Классическая скульптура в технике инталия.",
+        "description": "Заливная свеча в кашпо с объемным рельефом розы.",
         "image_path": "decor/rose_intalia.png",
         "category": "Коллекция Декор",
         "aroma_options": [
@@ -216,10 +249,10 @@
         ]
     },
     {
-        "id": 19,
-        "name": "Интерьерная свеча Тыква",
+        "id": 21,
+        "name": "Тыква в шкатулке",
         "price": 1500,
-        "description": "Уютная осенняя форма.",
+        "description": "Ароматная тыква в гипсовой шкатулке.",
         "image_path": "decor/pumpkin_candle.png",
         "category": "Коллекция Декор",
         "aroma_options": [
@@ -228,10 +261,10 @@
         ]
     },
     {
-        "id": 20,
+        "id": 22,
         "name": "Цветущий кактус",
         "price": 1100,
-        "description": "Стильный интерьерный акцент.",
+        "description": "Свеча-шкатулка с реалистичным восковым суккулентом.",
         "image_path": "decor/cactus_candle.png",
         "category": "Коллекция Декор",
         "aroma_options": [
@@ -240,10 +273,10 @@
         ]
     },
     {
-        "id": 21,
-        "name": "Мишка",
+        "id": 23,
+        "name": "Свеча Мишка",
         "price": 800,
-        "description": "Трогательный декор из лепестков.",
+        "description": "Покрыт сотнями миниатюрных розочек.",
         "image_path": "mini/bear.png",
         "category": "Коллекция Мини",
         "aroma_options": [
@@ -252,10 +285,10 @@
         ]
     },
     {
-        "id": 22,
-        "name": "Собачка",
+        "id": 24,
+        "name": "Свеча Собачка",
         "price": 800,
-        "description": "Воплощение нежности.",
+        "description": "Нежность и уют в форме собачки из роз.",
         "image_path": "mini/dog.png",
         "category": "Коллекция Мини",
         "aroma_options": [
@@ -264,10 +297,10 @@
         ]
     },
     {
-        "id": 23,
-        "name": "Мишка с сердцем",
+        "id": 25,
+        "name": "Свеча Мишка с сердцем",
         "price": 450,
-        "description": "Трогательное выражение любви.",
+        "description": "Трогательный медвежонок с сердцем из лепестков.",
         "image_path": "mini/bear_with_heart.png",
         "category": "Коллекция Мини",
         "aroma_options": [
@@ -276,10 +309,10 @@
         ]
     },
     {
-        "id": 24,
-        "name": "Цветочное сердце",
+        "id": 26,
+        "name": "Свеча Цветочное сердце",
         "price": 370,
-        "description": "Романтичный символ.",
+        "description": "Сотни лепестков в форме сердца.",
         "image_path": "mini/flower_heart.png",
         "category": "Коллекция Мини",
         "aroma_options": [
@@ -288,10 +321,10 @@
         ]
     },
     {
-        "id": 25,
-        "name": "Пион (мини)",
+        "id": 27,
+        "name": "Свеча Пион",
         "price": 420,
-        "description": "Природная утонченность.",
+        "description": "Реалистичный бутон с множеством лепестков.",
         "image_path": "mini/peony.png",
         "category": "Коллекция Мини",
         "aroma_options": [
@@ -300,10 +333,10 @@
         ]
     },
     {
-        "id": 26,
-        "name": "Тюльпан",
+        "id": 28,
+        "name": "Свеча Тюльпан",
         "price": 450,
-        "description": "Весенняя свежесть.",
+        "description": "Букет из нераскрытых тюльпанов.",
         "image_path": "mini/tulip.png",
         "category": "Коллекция Мини",
         "aroma_options": [
@@ -312,99 +345,101 @@
         ]
     },
     {
-        "id": 27,
+        "id": 29,
         "name": "Мэлтсы (50г)",
         "price": 700,
-        "description": "Ароматные сердечки из воска.",
+        "description": "Ароматные сердечки из воска для лампы.",
         "image_path": "melts/melts_s.png",
         "category": "Ароматы для дома",
         "aroma_options": [
             "Французская сирень",
-            "Пряный апельсин"
-        ]
-    },
-    {
-        "id": 28,
-        "name": "Мэлтсы (100г)",
-        "price": 1150,
-        "description": "Больше аромата для вашего дома.",
-        "image_path": "melts/melts_m.jpg",
-        "category": "Ароматы для дома",
-        "aroma_options": [
-            "Французская сирень",
-            "Пряный апельсин"
-        ]
-    },
-    {
-        "id": 29,
-        "name": "Аромалампа Арка",
-        "price": 1200,
-        "description": "Стильная и функциональная арка.",
-        "image_path": "melts/aromalamp/aromalamp.png",
-        "category": "Ароматы для дома",
-        "aroma_options": [
-            "Французская сирень",
-            "Пряный апельсин"
+            "Пряный апельсин",
+            "Сахарный личи"
         ]
     },
     {
         "id": 30,
-        "name": "Ароматическое саше",
-        "price": 900,
-        "description": "Стойкий аромат для гардероба.",
-        "image_path": "melts/sachet.jpg",
+        "name": "Мэлтсы (100г)",
+        "price": 1150,
+        "description": "Ароматные сердечки, больше объема.",
+        "image_path": "melts/melts_m.jpg",
         "category": "Ароматы для дома",
         "aroma_options": [
             "Французская сирень",
-            "Пряный апельсин"
+            "Пряный апельсин",
+            "Сахарный личи"
         ]
     },
     {
         "id": 31,
-        "name": "Пасхальный заяц",
-        "price": 2500,
-        "description": "Эксклюзивный пасхальный арт-объект.",
-        "image_path": "easter/easter_rabbit/white_rabbit.png",
-        "category": "Пасхальная коллекция",
+        "name": "Аромалампа Арка",
+        "price": 1200,
+        "description": "Архитектурный минимализм из гипса.",
+        "image_path": "melts/aromalamp/aromalamp.png",
+        "category": "Ароматы для дома",
         "aroma_options": [
-            "Лаванда",
-            "Роза"
+            "Неприменимо"
         ]
     },
     {
         "id": 32,
-        "name": "Пасхальное яйцо (Аромасвеча)",
-        "price": 2400,
-        "description": "Минимализм и праздничный дух.",
-        "image_path": "easter/easter_eggs/poured_egg.png",
-        "category": "Пасхальная коллекция",
+        "name": "Ароматическое саше",
+        "price": 900,
+        "description": "Мини-плитка в виде шоколада.",
+        "image_path": "melts/sachet.jpg",
+        "category": "Ароматы для дома",
         "aroma_options": [
-            "Лаванда",
-            "Роза"
+            "Французская сирень",
+            "Пряный апельсин",
+            "Сахарный личи"
         ]
     },
     {
         "id": 33,
-        "name": "Пасхальное яйцо (Классик)",
-        "price": 500,
-        "description": "Набор из 3-х лаконичных яиц.",
-        "image_path": "easter/easter_eggs/classic_egg.png",
+        "name": "Пасхальный заяц",
+        "price": 2500,
+        "description": "Эксклюзивный арт-объект в форме зайца.",
+        "image_path": "easter/easter_rabbit/pink_rabbit.png",
         "category": "Пасхальная коллекция",
         "aroma_options": [
             "Лаванда",
-            "Роза"
+            "Роза",
+            "Хлопок"
         ]
     },
     {
         "id": 34,
-        "name": "Пасхальное яйцо (Ажур)",
-        "price": 700,
-        "description": "Изысканный флористический рельеф.",
-        "image_path": "easter/easter_eggs/lace_egg.png",
+        "name": "Пасхальное яйцо (Аромасвеча)",
+        "price": 2400,
+        "description": "Воплощение обновления, авторское кашпо.",
+        "image_path": "easter/easter_eggs/poured_egg.png",
         "category": "Пасхальная коллекция",
         "aroma_options": [
             "Лаванда",
-            "Роза"
+            "Роза",
+            "Хлопок"
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Пасхальное яйцо (Классик)",
+        "price": 500,
+        "description": "Набор из 3-х гладких свечей.",
+        "image_path": "easter/easter_eggs/classic_egg.png",
+        "category": "Пасхальная коллекция",
+        "aroma_options": [
+            "Без аромата"
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Пасхальное яйцо (Ажур)",
+        "price": 700,
+        "description": "Флористический ажурный рельеф.",
+        "image_path": "easter/easter_eggs/lace_egg.png",
+        "category": "Пасхальная коллекция",
+        "aroma_options": [
+            "Без аромата"
         ]
     }
 ]
