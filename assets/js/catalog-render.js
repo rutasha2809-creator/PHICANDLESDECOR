@@ -34,13 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     const colorOptions = (product.color_options || []).map(color => `<div class="color-swatch" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" onclick="selectColor(this, '${color}')" title="${color}"></div>`).join('');
 
                     card.innerHTML = `
-                        <img src="${product.image_path}" alt="${product.name}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                        <img src="${product.image_path}" alt="${product.name}" 
+                             onerror="this.src='https://images.unsplash.com/photo-1602874801063-f29003855a33?auto=format&fit=crop&q=80&w=400'; this.onerror=null;"
+                             style="width: 100%; height: 250px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; background: #fdfdfd;">
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         
-                        ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
                         
-                        ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
                         
                         <p class="product-price">${product.price} ₽</p>
                         <button class="btn" onclick="addToCart(${product.id})">В корзину</button>
