@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const productGrid = document.querySelector('.product-grid');
 
-    fetch('data/catalog.json')
+    fetch('./data/catalog.json')
         .then(response => response.json())
         .then(products => {
             productGrid.innerHTML = '';
