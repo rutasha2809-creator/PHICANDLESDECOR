@@ -8,14 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
             products.forEach(product => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
+                const aromaOptions = product.aroma_options.map(aroma => `<option value="${aroma}">${aroma}</option>`).join('');
                 card.innerHTML = `
                     <img src="${product.image_path}" 
                          alt="${product.name}" 
                          onerror="this.src='assets/placeholder.png'; this.onerror=null;"
-                         style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 15px;">
+                         style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                     <p class="product-category">${product.category}</p>
                     <h3 class="product-name">${product.name}</h3>
                     <p class="product-description">${product.description}</p>
+                    <div style="margin-bottom: 15px;">
+                        <select id="aroma-${product.id}" class="aroma-select">
+                            ${aromaOptions}
+                        </select>
+                    </div>
                     <p class="product-price">${product.price} ₽</p>
                     <button class="btn" onclick="addToCart(${product.id})">В корзину</button>
                 `;
