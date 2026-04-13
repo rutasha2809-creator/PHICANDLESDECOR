@@ -6,15 +6,8 @@
         "description": "Изысканное сочетание декора и аромата в чаше из акрилового гипса ручной работы.",
         "image_path": "flowers/flower_compositions/pistache_rose.jpg",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Французская сирень",
-            "Лесной ландыш",
-            "Ваниль"
-        ],
-        "color_options": [
-            "Белый",
-            "Фисташковый"
-        ]
+        "has_aroma": true,
+        "has_color": false
     },
     {
         "id": 2,
@@ -23,15 +16,8 @@
         "description": "Воздушная эстетика для вашего дома. Нежный пудровый аромат.",
         "image_path": "flowers/flower_compositions/zefir_rose.png",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Французская сирень",
-            "Лесной ландыш",
-            "Ваниль"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый"
-        ]
+        "has_aroma": true,
+        "has_color": false
     },
     {
         "id": 3,
@@ -40,15 +26,8 @@
         "description": "Минималистичная композиция из акрилового гипса.",
         "image_path": "flowers/flower_compositions/rose_set.png",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Французская сирень",
-            "Лесной ландыш",
-            "Ваниль"
-        ],
-        "color_options": [
-            "Белый",
-            "Сиреневый"
-        ]
+        "has_aroma": true,
+        "has_color": false
     },
     {
         "id": 4,
@@ -57,15 +36,8 @@
         "description": "Лаконичная и нежная ароматическая свеча в фактурном кашпо из акрилового гипса.",
         "image_path": "flowers/flower_decor/kuvsinka.png",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Хлопок",
-            "Лаванда",
-            "Сандаловое дерево"
-        ],
-        "color_options": [
-            "Сиреневый",
-            "Белый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 5,
@@ -74,15 +46,8 @@
         "description": "Элегантное воплощение чистоты. Свеча в фактурном кашпо из акрилового гипса.",
         "image_path": "flowers/flower_decor/chrysanthemum.png",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Хлопок",
-            "Лаванда",
-            "Сандаловое дерево"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 6,
@@ -91,15 +56,8 @@
         "description": "Яркая композиция в прозрачном стекле, украшена восковыми ромашками.",
         "image_path": "flowers/flower_decor/summer_meadow.png",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Хлопок",
-            "Лаванда",
-            "Сандаловое дерево"
-        ],
-        "color_options": [
-            "Зеленый",
-            "Желтый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 7,
@@ -108,14 +66,8 @@
         "description": "Роскошный цветочный декор, вручную выполненный пион.",
         "image_path": "flowers/flower_glass/pion.png",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Хлопок",
-            "Лаванда",
-            "Сандаловое дерево"
-        ],
-        "color_options": [
-            "Пудровый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 8,
@@ -124,14 +76,8 @@
         "description": "Нежность и изысканный стиль, украшена реалистичными фиалками.",
         "image_path": "flowers/flower_glass/fialka.png",
         "category": "Цветочная коллекция",
-        "aroma_options": [
-            "Хлопок",
-            "Лаванда",
-            "Сандаловое дерево"
-        ],
-        "color_options": [
-            "Сиреневый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 9,
@@ -140,15 +86,8 @@
         "description": "Архитектурная классика, 21 см, ритмичный рельефный дизайн.",
         "image_path": "classic/facets/maxi.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Сандаловое дерево",
-            "Ваниль",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 10,
@@ -157,15 +96,8 @@
         "description": "Классическая цилиндрическая форма, 16 см.",
         "image_path": "classic/facets/midi.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Сандаловое дерево",
-            "Ваниль",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 11,
@@ -174,15 +106,8 @@
         "description": "Классическая цилиндрическая форма, 13 см.",
         "image_path": "classic/facets/mini.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Сандаловое дерево",
-            "Ваниль",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 12,
@@ -191,15 +116,8 @@
         "description": "Классическая эстетика в форме античной колонны с четкими желобками.",
         "image_path": "classic/columns/antique_column.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Сандаловое дерево",
-            "Ваниль"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый",
-            "Фисташковый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 13,
@@ -208,14 +126,8 @@
         "description": "Настоящий цветущий сад в воске, покрыта объемными цветами.",
         "image_path": "classic/columns/flower_column.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Сандаловое дерево",
-            "Ваниль"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 14,
@@ -224,15 +136,8 @@
         "description": "Эстетика в движении, плавный вихрь.",
         "image_path": "classic/spiral/spiral.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Сандаловое дерево",
-            "Ваниль"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый",
-            "Фисташковый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 15,
@@ -241,12 +146,8 @@
         "description": "Традиции и уют, 3 штуки в наборе, 20 см.",
         "image_path": "classic/table_candles/beeswax_candles.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Без аромата"
-        ],
-        "color_options": [
-            "Натуральный"
-        ]
+        "has_aroma": false,
+        "has_color": false
     },
     {
         "id": 16,
@@ -255,12 +156,8 @@
         "description": "Традиции и уют, 3 штуки в наборе, 20 см.",
         "image_path": "classic/table_candles/soy_candles.png",
         "category": "Коллекция Классик",
-        "aroma_options": [
-            "Без аромата"
-        ],
-        "color_options": [
-            "Натуральный"
-        ]
+        "has_aroma": false,
+        "has_color": false
     },
     {
         "id": 17,
@@ -269,13 +166,8 @@
         "description": "Изысканное сочетание вазы и подноса, уникальная мраморная заливка.",
         "image_path": "decor/artdeco_set.png",
         "category": "Коллекция Декор",
-        "aroma_options": [
-            "Табак и бергамот",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Мраморный"
-        ]
+        "has_aroma": false,
+        "has_color": false
     },
     {
         "id": 18,
@@ -284,15 +176,8 @@
         "description": "Стакан и поднос для эстетов минимализма.",
         "image_path": "decor/minimalism_set.png",
         "category": "Коллекция Декор",
-        "aroma_options": [
-            "Табак и бергамот",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Бежевый",
-            "Пудровый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 19,
@@ -301,14 +186,8 @@
         "description": "Авторский стакан из гипса с рельефным цветочным узором.",
         "image_path": "decor/elegant_lines.png",
         "category": "Коллекция Декор",
-        "aroma_options": [
-            "Табак и бергамот",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Бежевый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 20,
@@ -317,15 +196,8 @@
         "description": "Заливная свеча в кашпо с объемным рельефом розы.",
         "image_path": "decor/rose_intalia.png",
         "category": "Коллекция Декор",
-        "aroma_options": [
-            "Табак и бергамот",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый",
-            "Пудровый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 21,
@@ -334,15 +206,8 @@
         "description": "Ароматная тыква в гипсовой шкатулке.",
         "image_path": "decor/pumpkin_candle.png",
         "category": "Коллекция Декор",
-        "aroma_options": [
-            "Табак и бергамот",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Бежевый",
-            "Золотой"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 22,
@@ -351,14 +216,8 @@
         "description": "Свеча-шкатулка с реалистичным восковым суккулентом.",
         "image_path": "decor/cactus_candle.png",
         "category": "Коллекция Декор",
-        "aroma_options": [
-            "Табак и бергамот",
-            "Кашемировый мускус"
-        ],
-        "color_options": [
-            "Белый",
-            "Бежевый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 23,
@@ -367,18 +226,8 @@
         "description": "Покрыт сотнями миниатюрных розочек.",
         "image_path": "mini/bear.png",
         "category": "Коллекция Мини",
-        "aroma_options": [
-            "Ваниль",
-            "Карамель"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый",
-            "Желтый",
-            "Зеленый",
-            "Лиловый",
-            "Абрикосовый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 24,
@@ -387,18 +236,8 @@
         "description": "Нежность и уют в форме собачки из роз.",
         "image_path": "mini/dog.png",
         "category": "Коллекция Мини",
-        "aroma_options": [
-            "Ваниль",
-            "Карамель"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый",
-            "Желтый",
-            "Зеленый",
-            "Лиловый",
-            "Абрикосовый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 25,
@@ -407,18 +246,8 @@
         "description": "Трогательный медвежонок с сердцем из лепестков.",
         "image_path": "mini/bear_with_heart.png",
         "category": "Коллекция Мини",
-        "aroma_options": [
-            "Ваниль",
-            "Карамель"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый",
-            "Желтый",
-            "Зеленый",
-            "Лиловый",
-            "Абрикосовый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 26,
@@ -427,14 +256,8 @@
         "description": "Сотни лепестков в форме сердца.",
         "image_path": "mini/flower_heart.png",
         "category": "Коллекция Мини",
-        "aroma_options": [
-            "Ваниль",
-            "Карамель"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 27,
@@ -443,15 +266,8 @@
         "description": "Реалистичный бутон с множеством лепестков.",
         "image_path": "mini/peony.png",
         "category": "Коллекция Мини",
-        "aroma_options": [
-            "Ваниль",
-            "Карамель"
-        ],
-        "color_options": [
-            "Белый",
-            "Пудровый",
-            "Желтый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 28,
@@ -460,17 +276,8 @@
         "description": "Букет из нераскрытых тюльпанов.",
         "image_path": "mini/tulip.png",
         "category": "Коллекция Мини",
-        "aroma_options": [
-            "Ваниль",
-            "Карамель"
-        ],
-        "color_options": [
-            "Розовый",
-            "Желтый",
-            "Лиловый",
-            "Пудровый",
-            "Белый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 29,
@@ -479,16 +286,8 @@
         "description": "Ароматные сердечки из воска для лампы.",
         "image_path": "melts/melts_s.png",
         "category": "Ароматы для дома",
-        "aroma_options": [
-            "Французская сирень",
-            "Пряный апельсин",
-            "Сахарный личи"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый",
-            "Голубой"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 30,
@@ -497,16 +296,8 @@
         "description": "Ароматные сердечки, больше объема.",
         "image_path": "melts/melts_m.jpg",
         "category": "Ароматы для дома",
-        "aroma_options": [
-            "Французская сирень",
-            "Пряный апельсин",
-            "Сахарный личи"
-        ],
-        "color_options": [
-            "Белый",
-            "Розовый",
-            "Голубой"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 31,
@@ -515,12 +306,8 @@
         "description": "Архитектурный минимализм из гипса.",
         "image_path": "melts/aromalamp/aromalamp.png",
         "category": "Ароматы для дома",
-        "aroma_options": [
-            "Неприменимо"
-        ],
-        "color_options": [
-            "Белый"
-        ]
+        "has_aroma": false,
+        "has_color": false
     },
     {
         "id": 32,
@@ -529,14 +316,8 @@
         "description": "Стойкий аромат для гардероба.",
         "image_path": "melts/sachet.jpg",
         "category": "Ароматы для дома",
-        "aroma_options": [
-            "Французская сирень",
-            "Пряный апельсин",
-            "Сахарный личи"
-        ],
-        "color_options": [
-            "Натуральный"
-        ]
+        "has_aroma": true,
+        "has_color": false
     },
     {
         "id": 33,
@@ -545,20 +326,8 @@
         "description": "Эксклюзивный пасхальный арт-объект.",
         "image_path": "easter/easter_rabbit/pink_rabbit.png",
         "category": "Пасхальная коллекция",
-        "aroma_options": [
-            "Лаванда",
-            "Роза",
-            "Хлопок"
-        ],
-        "color_options": [
-            "Бежевый",
-            "Белый",
-            "Желтый",
-            "Пудровый",
-            "Розовый",
-            "Салатовый",
-            "Сиреневый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 34,
@@ -567,20 +336,8 @@
         "description": "Воплощение обновления, авторское кашпо.",
         "image_path": "easter/easter_eggs/poured_egg.png",
         "category": "Пасхальная коллекция",
-        "aroma_options": [
-            "Лаванда",
-            "Роза",
-            "Хлопок"
-        ],
-        "color_options": [
-            "Бежевый",
-            "Белый",
-            "Желтый",
-            "Пудровый",
-            "Розовый",
-            "Салатовый",
-            "Сиреневый"
-        ]
+        "has_aroma": true,
+        "has_color": true
     },
     {
         "id": 35,
@@ -589,16 +346,8 @@
         "description": "Набор из 3-х гладких свечей.",
         "image_path": "easter/easter_eggs/classic_egg.png",
         "category": "Пасхальная коллекция",
-        "aroma_options": [
-            "Без аромата"
-        ],
-        "color_options": [
-            "Желтый",
-            "Розовый",
-            "Салатовый",
-            "Белый",
-            "Абрикосовый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     },
     {
         "id": 36,
@@ -607,15 +356,7 @@
         "description": "Флористический ажурный рельеф.",
         "image_path": "easter/easter_eggs/lace_egg.png",
         "category": "Пасхальная коллекция",
-        "aroma_options": [
-            "Без аромата"
-        ],
-        "color_options": [
-            "Желтый",
-            "Розовый",
-            "Салатовый",
-            "Белый",
-            "Абрикосовый"
-        ]
+        "has_aroma": false,
+        "has_color": true
     }
 ]

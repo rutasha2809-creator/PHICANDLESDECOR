@@ -1,51 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mainContainer = document.querySelector('main.container');
 
-    fetch('./data/catalog.json')
-        .then(response => response.json())
-        .then(products => {
-            const categories = [...new Set(products.map(p => p.category))];
+    Promise.all([
+        fetch('./data/catalog.json').then(r => r.json()),
+        fetch('./List of fragrances.txt').then(r => r.text()),
+        fetch('./data/colors.txt').then(r => r.text())
+    ]).then(([products, fragrancesRaw, colorsRaw]) => {
+        const fragrances = fragrancesRaw.split('\n').filter(f => f.trim() !== '');
+        const colors = colorsRaw.split('\n').filter(c => c.trim() !== '');
+        const categories = [...new Set(products.map(p => p.category))];
 
-            categories.forEach(category => {
-                const section = document.createElement('section');
-                section.style.marginBottom = '60px';
-                section.innerHTML = `<h2 style="margin-bottom: 30px;">${category}</h2><div class="product-grid" id="grid-${category.replace(/\s+/g, '-')}"></div>`;
-                mainContainer.appendChild(section);
+        categories.forEach(category => {
+            const section = document.createElement('section');
+            section.style.marginBottom = '60px';
+            section.innerHTML = `<h2 style="margin-bottom: 30px;">${category}</h2><div class="product-grid" id="grid-${category.replace(/\s+/g, '-')}"></div>`;
+            mainContainer.appendChild(section);
 
-                const productGrid = section.querySelector('.product-grid');
-                products.filter(p => p.category === category).forEach(product => {
-                    const card = document.createElement('div');
-                    card.className = 'product-card';
-                    const aromaOptions = product.aroma_options.map(aroma => `<option value="${aroma}">${aroma}</option>`).join('');
-                    card.innerHTML = `
-                        <img src="${product.image_path}" 
-                             alt="${product.name}" 
-                             onerror="this.src='https://images.unsplash.com/photo-1602874801063-f29003855a33?auto=format&fit=crop&q=80&w=400'; this.onerror=null;"
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div style="margin-bottom: 15px;">
-                            ${product.aroma_options[0] !== 'Неприменимо' && product.aroma_options[0] !== 'Без аромата' ? `
-                                <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Выберите аромат:</label>
-                                <select id="aroma-${product.id}" class="aroma-select">
-                                    ${aromaOptions}
-                                </select>
-                            ` : ''}
-                            ${product.color_options && product.color_options.length > 0 && product.color_options[0] !== 'Натуральный' && product.color_options[0] !== 'Мраморный' ? `
-                                <label style="display:block; font-size: 0.8rem; margin-top: 10px; margin-bottom: 5px;">Цвет:</label>
-                                <select id="color-${product.id}" class="aroma-select">
-                                    ${product.color_options.map(c => `<option value="${c}">${c}</option>`).join('')}
-                                </select>
-                            ` : ''}
-                        </div>
-                        <p class="product-price">${product.price} ₽</p>
-                        <button class="btn" onclick="showDetails(${product.id})">Подробнее</button>
-                    `;
-                    productGrid.appendChild(card);
-                });
+            const productGrid = section.querySelector('.product-grid');
+            products.filter(p => p.category === category).forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+
+                card.innerHTML = `
+                    <img src="${product.image_path}" 
+                         alt="${product.name}" 
+                         onerror="this.src='https://images.unsplash.com/photo-1602874801063-f29003855a33?auto=format&fit=crop&q=80&w=400'; this.onerror=null;"
+                         style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <div style="margin-bottom: 15px;">
+                        ${product.has_aroma ? `
+                            <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Выберите аромат:</label>
+                            <select id="aroma-${product.id}" class="aroma-select">
+                                ${fragrances.map(f => `<option value="${f}">${f}</option>`).join('')}
+                            </select>
+                        ` : ''}
+                        ${product.has_color ? `
+                            <label style="display:block; font-size: 0.8rem; margin-top: 10px; margin-bottom: 5px;">Выбери цвет:</label>
+                            <select id="color-${product.id}" class="aroma-select">
+                                ${colors.map(c => `<option value="${c}">${c}</option>`).join('')}
+                            </select>
+                        ` : ''}
+                    </div>
+                    <p class="product-price">${product.price} ₽</p>
+                    <button class="btn" onclick="showDetails(${product.id})">Подробнее</button>
+                `;
+                productGrid.appendChild(card);
             });
-        })
-        .catch(err => console.error('Error loading products:', err));
+        });
+    }).catch(err => console.error('Error loading products:', err));
 });
 
 window.showDetails = function (productId) {
