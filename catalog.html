@@ -37,19 +37,15 @@
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                fetch('data/catalog.json')
-                    .then(response => response.json())
-                    .then(products => {
-                        const grid = document.getElementById('catalogGrid');
-                        grid.innerHTML = products.map(product => `
-                            <div class="product-card">
-                                <img src="${product.image}" alt="${product.title}" style="width:100%">
-                                <h3>${product.title}</h3>
-                                <p>${product.description}</p>
-                                <p><strong>${product.price} руб.</strong></p>
-                            </div>
-                        `).join('');
-                    });
+                const grid = document.getElementById('catalogGrid');
+                grid.innerHTML = products.map(product => `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.title}" style="width:100%">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <p><strong>${product.price} руб.</strong></p>
+                    </div>
+                `).join('');
             });
         </script>
     </main>
