@@ -1,0 +1,39 @@
+.color-swatch {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid transparent;
+    margin-right: 10px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.color-swatch.selected {
+    border-color: #997950;
+}
+
+.aroma-chip {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.aroma-chip:hover {
+    background: #F9F9F9;
+}
+
+.aroma-chip.selected {
+    background: #997950;
+    color: #fff;
+    border-color: #997950;
+}

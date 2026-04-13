@@ -1,95 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mainContainer = document.querySelector('main.container');
 
-    Promise.all([
-        fetch('./data/catalog.json').then(r => r.json()),
-        fetch('./List of fragrances.txt').then(r => r.text()),
-        fetch('./data/colors.txt').then(r => r.text())
-    ]).then(([products, fragrancesRaw, colorsRaw]) => {
-        const fragrances = fragrancesRaw.split('\n').filter(f => f.trim() !== '');
-        const colors = colorsRaw.split('\n').filter(c => c.trim() !== '');
-        const categories = [...new Set(products.map(p => p.category))];
+    const colorMap = {
+        'белый': '#ffffff',
+        'бежевый': '#f5f5dc',
+        'желтый': '#ffff00',
+        'розовый': '#ffc0cb',
+        'пудровый': '#f4c2c2',
+        'салатовый': '#90ee90',
+        'зеленый': '#008000',
+        'абрикосовый': '#fbceb1',
+        'фиолетовый': '#800080'
+    };
 
-        categories.forEach(category => {
-            const section = document.createElement('section');
-            section.style.marginBottom = '60px';
-            section.innerHTML = `<h2 style="margin-bottom: 30px;">${category}</h2><div class="product-grid" id="grid-${category.replace(/\s+/g, '-')}"></div>`;
-            mainContainer.appendChild(section);
-
-            const productGrid = section.querySelector('.product-grid');
-            products.filter(p => p.category === category).forEach(product => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-
-                card.innerHTML = `
-                    <img src="${product.image_path}" 
-                         alt="${product.name}" 
-                         onerror="this.src='https://images.unsplash.com/photo-1602874801063-f29003855a33?auto=format&fit=crop&q=80&w=400'; this.onerror=null;"
-                         style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="product-description">${product.description}</p>
-                    <div style="margin-bottom: 15px;">
-                        ${product.has_aroma ? `
-                            <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Выберите аромат:</label>
-                            <select id="aroma-${product.id}" class="aroma-select">
-                                ${fragrances.map(f => `<option value="${f}">${f}</option>`).join('')}
-                            </select>
-                        ` : ''}
-                        ${product.has_color ? `
-                            <label style="display:block; font-size: 0.8rem; margin-top: 10px; margin-bottom: 5px;">Выбери цвет:</label>
-                            <select id="color-${product.id}" class="aroma-select">
-                                ${colors.map(c => `<option value="${c}">${c}</option>`).join('')}
-                            </select>
-                        ` : ''}
-                    </div>
-                    <p class="product-price">${product.price} ₽</p>
-                    <button class="btn" onclick="showDetails(${product.id})">Подробнее</button>
-                `;
-                productGrid.appendChild(card);
-            });
-        });
-    }).catch(err => console.error('Error loading products:', err));
-});
-
-window.showDetails = function (productId) {
     fetch('./data/catalog.json')
         .then(response => response.json())
         .then(products => {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
+            const categories = [...new Set(products.map(p => p.category))];
 
-            const modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.left = '0';
-            modal.style.width = '100%';
-            modal.style.height = '100%';
-            modal.style.background = 'rgba(0,0,0,0.5)';
-            modal.style.display = 'flex';
-            modal.style.justifyContent = 'center';
-            modal.style.alignItems = 'center';
-            modal.style.zIndex = '1000';
+            categories.forEach(category => {
+                const section = document.createElement('section');
+                section.style.marginBottom = '60px';
+                section.innerHTML = `<h2 style="margin-bottom: 30px;">${category}</h2><div class="product-grid"></div>`;
+                mainContainer.appendChild(section);
 
-            modal.innerHTML = `
-                <div style="background: #fff; padding: 40px; border-radius: 8px; max-width: 500px; width: 90%; position: relative;">
-                    <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer;">✕</button>
-                    <h2 style="color: #997950;">${product.name}</h2>
-                    <p style="margin: 20px 0;">${product.description}</p>
-                    <p style="font-weight: 700; margin-bottom: 20px;">Цена: ${product.price} ₽</p>
-                    <button class="btn" onclick="addToCart(${product.id}); this.parentElement.parentElement.remove()">В корзину</button>
-                </div>
-            `;
-            document.body.appendChild(modal);
+                const productGrid = section.querySelector('.product-grid');
+                products.filter(p => p.category === category).forEach(product => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.dataset.productId = product.id;
+
+                    const aromaOptions = product.aroma_options.map(aroma => `<div class="aroma-chip" onclick="selectAroma(this, '${aroma}')">${aroma}</div>`).join('');
+                    const colorOptions = product.color_options.map(color => `<div class="color-swatch" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" onclick="selectColor(this, '${color}')" title="${color}"></div>`).join('');
+
+                    card.innerHTML = `
+                        <img src="${product.image_path}" alt="${product.name}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        
+                        ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        
+                        ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950;"></p></div>` : ''}
+                        
+                        <p class="product-price">${product.price} ₽</p>
+                        <button class="btn" onclick="addToCart(${product.id})">В корзину</button>
+                    `;
+                    productGrid.appendChild(card);
+                });
+            });
         });
-}
+});
 
-function addToCart(productId) {
+window.selectAroma = (el, aroma) => {
+    const parent = el.closest('.product-card');
+    parent.querySelectorAll('.aroma-chip').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    parent.querySelector('.selected-aroma').textContent = `Аромат: ${aroma}`;
+    parent.dataset.selectedAroma = aroma;
+};
+
+window.selectColor = (el, color) => {
+    const parent = el.closest('.product-card');
+    parent.querySelectorAll('.color-swatch').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    parent.querySelector('.selected-color').textContent = `Цвет: ${color}`;
+    parent.dataset.selectedColor = color;
+};
+
+window.addToCart = (productId) => {
+    const card = document.querySelector(`[data-product-id="${productId}"]`);
+    const aroma = card.dataset.selectedAroma;
+    const color = card.dataset.selectedColor;
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    if (!cart.includes(productId)) {
-        cart.push(productId);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert('Товар добавлен в корзину');
-    } else {
-        alert('Товар уже в корзине');
-    }
-}
+    cart.push({ productId, aroma, color });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`Товар добавлен: ${card.querySelector('.product-name').textContent}${aroma ? ' / ' + aroma : ''}${color ? ' / ' + color : ''}`);
+};
