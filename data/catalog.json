@@ -15,7 +15,7 @@
         "id": 2,
         "name": "Зефирная роза",
         "price": 3400,
-        "description": "Воздушная эстетика для вашего дома.",
+        "description": "Воздушная эстетика для вашего дома. Нежный пудровый аромат.",
         "image_path": "flowers/flower_compositions/zefir_rose.png",
         "category": "Цветочная коллекция",
         "aroma_options": [
@@ -100,7 +100,7 @@
         "name": "Грание свечения (Макси)",
         "price": 1500,
         "description": "Архитектурная классика, 21 см.",
-        "image_path": "classic/table_candles/classic_1.png",
+        "image_path": "classic/table_candles/soy_candles.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -112,7 +112,7 @@
         "name": "Грание свечения (Миди)",
         "price": 900,
         "description": "Классическая цилиндрическая форма, 16 см.",
-        "image_path": "classic/table_candles/classic_1.png",
+        "image_path": "classic/table_candles/soy_candles.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -124,7 +124,7 @@
         "name": "Грание свечения (Мини)",
         "price": 1200,
         "description": "Классическая цилиндрическая форма, 13 см.",
-        "image_path": "classic/table_candles/classic_1.png",
+        "image_path": "classic/table_candles/soy_candles.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -136,7 +136,7 @@
         "name": "Античная колонна",
         "price": 850,
         "description": "Элегантность времени, воплощенная в воске.",
-        "image_path": "classic/columns/classic_1.png",
+        "image_path": "classic/columns/antique_column.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -148,7 +148,7 @@
         "name": "Цветочная колонна",
         "price": 920,
         "description": "Настоящий цветущий сад в воске.",
-        "image_path": "classic/columns/classic_1.png",
+        "image_path": "classic/columns/flower_column.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -160,7 +160,7 @@
         "name": "Спираль",
         "price": 600,
         "description": "Эстетика в движении, плавный вихрь.",
-        "image_path": "classic/spiral/classic_1.png",
+        "image_path": "classic/spiral/spiral.png",
         "category": "Коллекция Классик",
         "aroma_options": [
             "Сандаловое дерево",
@@ -364,7 +364,7 @@
         "name": "Пасхальный заяц",
         "price": 2500,
         "description": "Эксклюзивный пасхальный арт-объект.",
-        "image_path": "easter/easter_rabbit/white_rabbit.png",
+        "image_path": "easter/easter_rabbit/easter_rabbit.png",
         "category": "Пасхальная коллекция",
         "aroma_options": [
             "Лаванда",
