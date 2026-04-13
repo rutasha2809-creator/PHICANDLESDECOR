@@ -25,14 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         <div style="margin-bottom: 15px;">
-                            <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Аромат:</label>
-                            <select id="aroma-${product.id}" class="aroma-select">
-                                ${aromaOptions}
-                            </select>
-                            <label style="display:block; font-size: 0.8rem; margin-top: 10px; margin-bottom: 5px;">Цвет:</label>
-                            <select id="color-${product.id}" class="aroma-select">
-                                ${product.color_options.map(c => `<option value="${c}">${c}</option>`).join('')}
-                            </select>
+                            ${product.aroma_options[0] !== 'Неприменимо' && product.aroma_options[0] !== 'Без аромата' ? `
+                                <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Выберите аромат:</label>
+                                <select id="aroma-${product.id}" class="aroma-select">
+                                    ${aromaOptions}
+                                </select>
+                            ` : ''}
+                            ${product.color_options && product.color_options.length > 0 && product.color_options[0] !== 'Натуральный' && product.color_options[0] !== 'Мраморный' ? `
+                                <label style="display:block; font-size: 0.8rem; margin-top: 10px; margin-bottom: 5px;">Цвет:</label>
+                                <select id="color-${product.id}" class="aroma-select">
+                                    ${product.color_options.map(c => `<option value="${c}">${c}</option>`).join('')}
+                                </select>
+                            ` : ''}
                         </div>
                         <p class="product-price">${product.price} ₽</p>
                         <button class="btn" onclick="showDetails(${product.id})">Подробнее</button>
