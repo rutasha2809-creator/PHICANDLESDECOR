@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Фисташковая роза",
+        "price": 1200,
+        "description": "Нежный аромат и утонченная форма.",
+        "image_path": "decor/rose_intalia.png",
+        "category": "Декор"
+    },
+    {
+        "id": 2,
+        "name": "Зефирная роза",
+        "price": 1100,
+        "description": "Воздушная эстетика для вашего дома.",
+        "image_path": "decor/rose_intalia.png",
+        "category": "Декор"
+    },
+    {
+        "id": 3,
+        "name": "Пион в стакане",
+        "price": 1500,
+        "description": "Классика в изысканном исполнении.",
+        "image_path": "mini/peony.png",
+        "category": "Мини"
+    },
+    {
+        "id": 4,
+        "name": "Кактус",
+        "price": 900,
+        "description": "Стильный интерьерный акцент.",
+        "image_path": "decor/cactus_candle.png",
+        "category": "Декор"
+    },
+    {
+        "id": 5,
+        "name": "Тыква",
+        "price": 950,
+        "description": "Уютная осенняя форма.",
+        "image_path": "decor/pumpkin_candle.png",
+        "category": "Декор"
+    },
+    {
+        "id": 6,
+        "name": "Мишка с сердцем",
+        "price": 800,
+        "description": "Милый подарок для близких.",
+        "image_path": "mini/bear_with_heart.png",
+        "category": "Мини"
+    },
+    {
+        "id": 7,
+        "name": "Элегантные линии",
+        "price": 1300,
+        "description": "Минималистичный дизайн.",
+        "image_path": "decor/elegant_lines.png",
+        "category": "Декор"
+    },
+    {
+        "id": 8,
+        "name": "Набор минимализм",
+        "price": 2500,
+        "description": "Гармония в каждом элементе.",
+        "image_path": "decor/minimalism_set.png",
+        "category": "Декор"
+    },
+    {
+        "id": 9,
+        "name": "Тюльпаны",
+        "price": 1100,
+        "description": "Весеннее настроение.",
+        "image_path": "mini/tulip.png",
+        "category": "Мини"
+    },
+    {
+        "id": 10,
+        "name": "Заяц пасхальный",
+        "price": 1000,
+        "description": "Праздничный декор.",
+        "image_path": "easter/easter_rabbit/easter_rabbit.png",
+        "category": "Пасха"
+    }
+]
