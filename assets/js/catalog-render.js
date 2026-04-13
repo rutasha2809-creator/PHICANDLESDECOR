@@ -25,9 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         <div style="margin-bottom: 15px;">
-                            <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Выберите аромат:</label>
+                            <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Аромат:</label>
                             <select id="aroma-${product.id}" class="aroma-select">
                                 ${aromaOptions}
+                            </select>
+                            <label style="display:block; font-size: 0.8rem; margin-top: 10px; margin-bottom: 5px;">Цвет:</label>
+                            <select id="color-${product.id}" class="aroma-select">
+                                ${product.color_options.map(c => `<option value="${c}">${c}</option>`).join('')}
                             </select>
                         </div>
                         <p class="product-price">${product.price} ₽</p>
