@@ -58,10 +58,19 @@
         </div>
     </footer>
     <div id="cookie-container"></div>
+    <div id="cookie-container"></div>
     <script>
-        fetch('cookie.html').then(response => response.text()).then(data => {
-            document.getElementById('cookie-container').innerHTML = data;
-        });
+        fetch('cookie.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('cookie-container').innerHTML = data;
+                // Re-initialize logic if needed or just let it run
+                const cookieAccepted = localStorage.getItem('cookieAccepted');
+                if (cookieAccepted) {
+                    const cookieWarning = document.getElementById('cookie-warning');
+                    if (cookieWarning) cookieWarning.style.display = 'none';
+                }
+            });
     </script>
     <script src="assets/js/common.js"></script>
 </body>
