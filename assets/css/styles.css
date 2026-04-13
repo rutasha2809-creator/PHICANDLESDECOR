@@ -1,0 +1,126 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F2EBE3;
+    /* Powder Beige */
+    color: #3D3D3D;
+    /* Dark Gray */
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    color: #997950;
+    /* Bronze */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header & Nav */
+.header {
+    padding: 30px 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #3D3D3D;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #997950;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #997950;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: #7a6040;
+}
+
+/* Product Cards */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.product-card {
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #F0F0F0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.product-card .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    padding: 60px 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHICANDLES — Натуральные свечи</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="cart.html">Корзина</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>PHICANDLES</h1>
+            <p>Уют и эстетика в каждом моменте.</p>
+            <a class="btn" href="catalog.html">Перейти в каталог</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section>
+            <h2>О нашем бренде</h2>
+            <p style="margin-top: 20px;">PHICANDLES — это страсть к созданию уюта. Мы используем только натуральные
+                материалы, чтобы каждая свеча приносила тепло и гармонию в ваш дом.</p>
+        </section>
+
+        <section style="margin-top: 60px;">
+            <h2>Коллекции</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Classic</h3>
+                    <p>Базовая коллекция для любого интерьера.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Decor</h3>
+                    <p>Фигурные свечи для акцента в пространстве.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Easter</h3>
+                    <p>Лимитированная пасхальная коллекция.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© PHICANDLES. Все права защищены.</p>
+            <p style="margin-top: 10px;">
+                <a href="docs/offer.html">Публичная оферта</a> |
+                <a href="docs/return.html">Возврат</a> |
+                <a href="privacy.html">Политика (152-ФЗ)</a>
+            </p>
+        </div>
+    </footer>
+    <div id="cookie-container"></div>
+    <script>
+        fetch('cookie.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('cookie-container').innerHTML = data;
+                const cookieAccepted = localStorage.getItem('cookieAccepted');
+                if (cookieAccepted) {
+                    const cookieWarning = document.getElementById('cookie-warning');
+                    if (cookieWarning) cookieWarning.style.display = 'none';
+                }
+            });
+    </script>
+</body>
+
+</html>

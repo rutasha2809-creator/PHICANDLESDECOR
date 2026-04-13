@@ -1,0 +1,14 @@
+<div id="cookie-warning" class="cookie-warning">
+    Мы используем файлы cookie для улучшения работы сайта. <button onclick="hideCookies()">Принять</button>
+</div>
+
+<script>
+    function hideCookies() {
+        document.getElementById('cookie-warning').style.display = 'none';
+        localStorage.setItem('cookieAccepted', 'true');
+    }
+
+    if (localStorage.getItem('cookieAccepted')) {
+        document.getElementById('cookie-warning').style.display = 'none';
+    }
+</script>
