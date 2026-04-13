@@ -59,6 +59,7 @@ window.selectAroma = (el, aroma) => {
     el.classList.add('selected');
     parent.querySelector('.selected-aroma').textContent = `Аромат: ${aroma}`;
     parent.dataset.selectedAroma = aroma;
+    console.log('Selected Aroma:', aroma);
 };
 
 window.selectColor = (el, color) => {
@@ -67,6 +68,7 @@ window.selectColor = (el, color) => {
     el.classList.add('selected');
     parent.querySelector('.selected-color').textContent = `Цвет: ${color}`;
     parent.dataset.selectedColor = color;
+    console.log('Selected Color:', color);
 };
 
 window.addToCart = (productId) => {
