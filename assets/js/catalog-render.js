@@ -18,13 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.className = 'product-card';
                     const aromaOptions = product.aroma_options.map(aroma => `<option value="${aroma}">${aroma}</option>`).join('');
                     card.innerHTML = `
-                        <img src="${product.image_path}" 
+                        <img src="./${product.image_path}" 
                              alt="${product.name}" 
                              onerror="this.src='https://images.unsplash.com/photo-1602874801063-f29003855a33?auto=format&fit=crop&q=80&w=400'; this.onerror=null;"
                              style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         <div style="margin-bottom: 15px;">
+                            <label style="display:block; font-size: 0.8rem; margin-bottom: 5px;">Выберите аромат:</label>
                             <select id="aroma-${product.id}" class="aroma-select">
                                 ${aromaOptions}
                             </select>
