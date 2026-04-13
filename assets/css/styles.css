@@ -6,11 +6,11 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #fdfaf6;
-    /* Warm White/Beige */
-    color: #4a4a4a;
-    /* Deep Grey */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F2EBE3;
+    /* Powder Beige */
+    color: #3D3D3D;
+    /* Dark Gray */
     line-height: 1.7;
     font-size: 16px;
 }
@@ -20,8 +20,11 @@ h2,
 h3,
 h4 {
     font-family: 'Playfair Display', serif;
-    color: #2c2c2c;
-    font-weight: 500;
+    color: #997950;
+    /* Bronze */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .container {
@@ -32,8 +35,9 @@ h4 {
 
 /* Header & Nav */
 .header {
-    padding: 40px 0;
-    border-bottom: 1px solid #e8e4e0;
+    padding: 30px 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .nav {
@@ -44,7 +48,7 @@ h4 {
 
 .nav a {
     text-decoration: none;
-    color: #7a7a7a;
+    color: #3D3D3D;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -52,13 +56,13 @@ h4 {
 }
 
 .nav a:hover {
-    color: #2c2c2c;
+    color: #997950;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 120px 0;
+    padding: 100px 0;
 }
 
 .hero h1 {
@@ -69,16 +73,18 @@ h4 {
 .btn {
     display: inline-block;
     padding: 15px 40px;
-    background: #2c2c2c;
+    background: #997950;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 2px;
     transition: background 0.3s ease;
     margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    background: #4a4a4a;
+    background: #7a6040;
 }
 
 /* Product Cards */
@@ -92,20 +98,20 @@ h4 {
 .product-card {
     background: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E5E7EB;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Footer */
 .footer {
     padding: 60px 0;
-    border-top: 1px solid #e8e4e0;
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
     text-align: center;
     font-size: 0.85rem;
     color: #888;
