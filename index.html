@@ -20,7 +20,7 @@
         <nav class="container nav">
             <div class="logo">PHICANDLES</div>
             <div class="nav-links">
-                <a href="#top">Главная</a>
+                <a href="index.html">Главная</a>
                 <a href="cart.html">Корзина</a>
                 <a href="collaboration.html">Сотрудничество</a>
                 <a href="contacts.html">Контакты</a>
@@ -65,27 +65,27 @@
         <div class="container">
             <div class="catalog-grid">
                 <a href="catalog.html" class="catalog-item">
-                    <img src="PRODUCTS/Conteiner candles/pion.png" alt="Контейнерные свечи">
+                    <img src="./PRODUCTS/Conteiner candles/pion.png" alt="Контейнерные свечи">
                     <h3>Контейнерные свечи</h3>
                 </a>
                 <a href="catalog.html" class="catalog-item">
-                    <img src="PRODUCTS/Form candles/maxi.png" alt="Формовые свечи">
+                    <img src="./PRODUCTS/Form candles/maxi.png" alt="Формовые свечи">
                     <h3>Формовые свечи</h3>
                 </a>
                 <a href="catalog.html" class="catalog-item">
-                    <img src="PRODUCTS/Interier candles/pistache_rose.jpg" alt="Интерьерные свечи">
+                    <img src="./PRODUCTS/Interier candles/pistache_rose.jpg" alt="Интерьерные свечи">
                     <h3>Интерьерные свечи</h3>
                 </a>
                 <a href="catalog.html" class="catalog-item">
-                    <img src="PRODUCTS/Aroma home/melts_s.png" alt="Ароматы для дома">
+                    <img src="./PRODUCTS/Aroma home/melts_s.png" alt="Ароматы для дома">
                     <h3>Ароматы для дома</h3>
                 </a>
                 <a href="catalog.html" class="catalog-item">
-                    <img src="PRODUCTS/Gift boxes/star_set.png" alt="Подарочные боксы">
+                    <img src="./PRODUCTS/Gift boxes/star_set.png" alt="Подарочные боксы">
                     <h3>Подарочные боксы</h3>
                 </a>
                 <a href="catalog.html" class="catalog-item">
-                    <img src="PRODUCTS/Seson offers/pink_rabbit.png" alt="Сезонные предложения">
+                    <img src="./PRODUCTS/Seson offers/pink_rabbit.png" alt="Сезонные предложения">
                     <h3>Сезонные предложения</h3>
                 </a>
             </div>
@@ -127,7 +127,7 @@
             <div class="footer-content">
                 <div class="footer-logo">PHICANDLES</div>
                 <div class="footer-links">
-                    <a href="#top">Главная</a>
+                    <a href="index.html">Главная</a>
                     <a href="catalog.html">Каталог</a>
                     <a href="cart.html">Корзина</a>
                     <a href="tips.html">Полезные советы</a>
@@ -177,7 +177,7 @@
         const aromaList = document.getElementById('aromaList');
 
         // Загрузка списка ароматов из файла
-        fetch('List of fragrances.txt')
+        fetch('./List of fragrances.txt')
             .then(response => response.text())
             .then(data => {
                 const aromas = data.split('\n').filter(aroma => aroma.trim() !== '');
