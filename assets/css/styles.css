@@ -18,7 +18,8 @@ h2,
 h3,
 h4 {
     font-family: 'Playfair Display', serif;
-    color: #3A3A3A;
+    color: #CD7F32;
+    /* Благородный бронзовый цвет */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -77,7 +78,8 @@ h4 {
 }
 
 .nav-links a:hover {
-    color: #997950;
+    color: #CD7F32;
+    /* Бронзовый цвет при наведении */
 }
 
 /* Hero Section */
@@ -104,10 +106,10 @@ h4 {
     background: rgba(0, 0, 0, 0.3);
 }
 
-/* Уменьшенный баннер */
+/* Увеличенный баннер */
 .hero-banner {
-    height: 35vh;
-    /* Уменьшено до 30-35% высоты экрана */
+    min-height: 60vh;
+    /* Увеличено до 60% высоты экрана */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -120,7 +122,9 @@ h4 {
     max-width: 100%;
     margin: 0 auto;
     padding-top: 80px;
-    /* Добавлен отступ сверху для фиксированного меню */
+    /* Отступ сверху для фиксированного меню */
+    aspect-ratio: auto;
+    /* Сохранение пропорций */
 }
 
 .hero-banner::before {
@@ -144,6 +148,8 @@ h4 {
     font-size: 4.5rem;
     margin-bottom: 20px;
     color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Добавляем тень для лучшей читаемости */
 }
 
 .hero-subtitle {
@@ -170,9 +176,12 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 25px;
+    /* Увеличенные отступы */
     background: #F8F5F2;
     border-radius: 8px;
+    border: 1px solid #CD7F32;
+    /* Тонкая бронзовая граница */
     cursor: pointer;
     transition: all 0.3s ease;
     flex: 1;
@@ -180,7 +189,7 @@ h4 {
     text-decoration: none;
     color: inherit;
     outline: none;
-    /* Убираем синюю подсветку при фокусе */
+    box-shadow: none;
 }
 
 /* Убираем синюю подсветку при фокусе для всех кнопок */
@@ -197,7 +206,8 @@ h4 {
 .nav-button i {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: #997950;
+    color: #CD7F32;
+    /* Бронзовый цвет для иконок */
 }
 
 .nav-button span {
@@ -277,7 +287,8 @@ h4 {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background-color: #997950;
+    background-color: #CD7F32;
+    /* Бронзовый цвет для декоративной линии */
 }
 
 .about-content {
@@ -312,7 +323,8 @@ h4 {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background-color: #997950;
+    background-color: #CD7F32;
+    /* Бронзовый цвет для декоративной линии */
 }
 
 /* Product Cards */
@@ -389,7 +401,8 @@ h4 {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background-color: #997950;
+    background-color: #CD7F32;
+    /* Бронзовый цвет для декоративной линии */
 }
 
 .instruction-card,
@@ -428,7 +441,8 @@ h4 {
 .production-card li::before,
 .care-card li::before {
     content: '•';
-    color: #997950;
+    color: #CD7F32;
+    /* Бронзовый цвет для маркеров списка */
     font-size: 1.2rem;
     position: absolute;
     left: 0;
@@ -458,7 +472,8 @@ h4 {
     transform: translateX(-50%);
     width: 80px;
     height: 2px;
-    background-color: #997950;
+    background-color: #CD7F32;
+    /* Бронзовый цвет для декоративной линии */
 }
 
 /* Footer */
@@ -497,7 +512,8 @@ h4 {
 }
 
 .footer-links a:hover {
-    color: #997950;
+    color: #CD7F32;
+    /* Бронзовый цвет для ссылок при наведении */
 }
 
 .footer-social {
@@ -512,7 +528,8 @@ h4 {
 }
 
 .footer-social a:hover {
-    color: #997950;
+    color: #CD7F32;
+    /* Бронзовый цвет для иконок соцсетей при наведении */
 }
 
 .footer-bottom {
@@ -555,7 +572,8 @@ h4 {
 .aroma-select:focus,
 .aroma-dropdown:focus {
     outline: none;
-    border-color: #997950;
+    border-color: #CD7F32;
+    /* Бронзовый цвет для фокуса на выпадающем списке */
 }
 
 /* Стили для выпадающего списка ароматов */
@@ -594,6 +612,8 @@ h4 {
 
 .aroma-item:hover {
     background-color: #F8F5F2;
+    color: #CD7F32;
+    /* Бронзовый цвет для текста при наведении */
 }
 
 /* Responsive Styles */
