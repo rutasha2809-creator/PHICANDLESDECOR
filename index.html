@@ -162,19 +162,40 @@
                 }
             });
 
-        // Выпадающее меню каталога
+        // Инициализация элементов меню
         const catalogBtn = document.getElementById('catalogBtn');
         const catalogDropdown = document.getElementById('catalogDropdown');
-
-        catalogBtn.addEventListener('click', function () {
-            aromaDropdown.classList.remove('active');
-            catalogDropdown.classList.toggle('active');
-        });
-
-        // Выпадающее меню ароматов
         const aromaBtn = document.getElementById('aromaBtn');
         const aromaDropdown = document.getElementById('aromaDropdown');
         const aromaList = document.getElementById('aromaList');
+
+        // Функция для закрытия всех выпадающих меню
+        function closeAllDropdowns() {
+            catalogDropdown.classList.remove('active');
+            aromaDropdown.classList.remove('active');
+        }
+
+        // Выпадающее меню каталога
+        catalogBtn.addEventListener('click', function (e) {
+            e.stopPropagation(); // Предотвращаем всплытие события
+            if (catalogDropdown.classList.contains('active')) {
+                catalogDropdown.classList.remove('active');
+            } else {
+                closeAllDropdowns();
+                catalogDropdown.classList.add('active');
+            }
+        });
+
+        // Выпадающее меню ароматов
+        aromaBtn.addEventListener('click', function (e) {
+            e.stopPropagation(); // Предотвращаем всплытие события
+            if (aromaDropdown.classList.contains('active')) {
+                aromaDropdown.classList.remove('active');
+            } else {
+                closeAllDropdowns();
+                aromaDropdown.classList.add('active');
+            }
+        });
 
         // Загрузка списка ароматов из файла
         fetch('./List of fragrances.txt')
@@ -190,19 +211,18 @@
                 aromaList.innerHTML = '<p>Не удалось загрузить список ароматов</p>';
             });
 
-        aromaBtn.addEventListener('click', function () {
-            catalogDropdown.classList.remove('active');
-            aromaDropdown.classList.toggle('active');
+        // Предотвращаем закрытие выпадающих меню при клике внутри них
+        catalogDropdown.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
+        aromaDropdown.addEventListener('click', function (e) {
+            e.stopPropagation();
         });
 
         // Закрытие выпадающих меню при клике вне их
-        document.addEventListener('click', function (event) {
-            if (!catalogBtn.contains(event.target) && !catalogDropdown.contains(event.target)) {
-                catalogDropdown.classList.remove('active');
-            }
-            if (!aromaBtn.contains(event.target) && !aromaDropdown.contains(event.target)) {
-                aromaDropdown.classList.remove('active');
-            }
+        document.addEventListener('click', function () {
+            closeAllDropdowns();
         });
 
         // Фиксированное меню при прокрутке
