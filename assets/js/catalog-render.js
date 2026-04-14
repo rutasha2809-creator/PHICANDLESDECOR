@@ -16,59 +16,88 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('./data/catalog.json')
         .then(response => response.json())
         .then(products => {
-            const categories = [...new Set(products.map(p => p.category))];
+            // Добавляем id для каждого продукта, если его нет
+            products.forEach((product, index) => {
+                if (!product.id) {
+                    product.id = index + 1;
+                }
+                // Преобразуем поля для совместимости
+                product.name = product.title || product.name;
+                product.image_path = product.image || product.image_path;
+                product.has_aroma = product.has_aroma || product.has_scent || false;
+            });
 
-            categories.forEach(category => {
+            const categories = [...new Set(products.map(p => p.category))].filter(Boolean);
+
+            // Если нет категорий, создаем одну секцию для всех товаров
+            if (categories.length === 0) {
                 const section = document.createElement('section');
                 section.style.marginBottom = '60px';
-                section.innerHTML = `<h2 style="margin-bottom: 30px;">${category}</h2><div class="product-grid"></div>`;
+                section.innerHTML = `<h2 style="margin-bottom: 30px;">Все товары</h2><div class="product-grid"></div>`;
                 mainContainer.appendChild(section);
 
                 const productGrid = section.querySelector('.product-grid');
-                products.filter(p => p.category === category).forEach(product => {
-                    const card = document.createElement('div');
-                    card.className = 'product-card';
-                    card.dataset.productId = product.id;
-
-                    const aromaOptions = (product.aroma_options || []).map(aroma => `<div class="aroma-chip" role="button" tabindex="0">${aroma}</div>`).join('');
-                    const colorOptions = (product.color_options || []).map(color => `<div class="color-swatch" role="button" tabindex="0" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" title="${color}"></div>`).join('');
-
-                    card.innerHTML = `
-                        <img src="${product.image_path}" alt="${product.name}" 
-                             onerror="this.src='https://images.unsplash.com/photo-1602874801063-f29003855a33?auto=format&fit=crop&q=80&w=400'; this.onerror=null;"
-                             style="width: 100%; height: 250px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; background: #fdfdfd;">
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        
-                        ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
-                        
-                        ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
-                        
-                        <p class="product-price">${product.price} ₽</p>
-                        <button class="btn add-to-cart-btn" data-product-id="${product.id}">В корзину</button>
-                    `;
-                    card.querySelector('.aroma-list')?.addEventListener('click', (e) => {
-                        const chip = e.target.closest('.aroma-chip');
-                        if (chip && card.querySelector('.aroma-list').contains(chip)) {
-                            window.selectAroma(chip, chip.textContent);
-                        }
-                    });
-                    card.querySelector('.color-list')?.addEventListener('click', (e) => {
-                        const swatch = e.target.closest('.color-swatch');
-                        if (swatch && card.querySelector('.color-list').contains(swatch)) {
-                            window.selectColor(swatch, swatch.title);
-                        }
-                    });
-                    const btn = card.querySelector('.add-to-cart-btn');
-                    btn.addEventListener('click', () => {
-                        const color = card.dataset.selectedColor;
-                        console.log('Выбранный цвет:', color);
-                        window.addToCart(product.id);
-                    });
-                    productGrid.appendChild(card);
+                products.forEach(product => {
+                    renderProductCard(product, productGrid);
                 });
-            });
+            } else {
+                // Иначе создаем секции по категориям
+                categories.forEach(category => {
+                    const section = document.createElement('section');
+                    section.style.marginBottom = '60px';
+                    section.innerHTML = `<h2 style="margin-bottom: 30px;">${category}</h2><div class="product-grid"></div>`;
+                    mainContainer.appendChild(section);
+
+                    const productGrid = section.querySelector('.product-grid');
+                    products.filter(p => p.category === category).forEach(product => {
+                        renderProductCard(product, productGrid);
+                    });
+                });
+            }
         });
+
+    function renderProductCard(product, container) {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.dataset.productId = product.id;
+
+        const aromaOptions = (product.aroma_options || []).map(aroma => `<div class="aroma-chip" role="button" tabindex="0">${aroma}</div>`).join('');
+        const colorOptions = (product.color_options || []).map(color => `<div class="color-swatch" role="button" tabindex="0" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" title="${color}"></div>`).join('');
+
+        card.innerHTML = `
+            <img src="${product.image_path}" alt="${product.name}" 
+                 onerror="this.src='https://images.unsplash.com/photo-1602874801063-f29003855a33?auto=format&fit=crop&q=80&w=400'; this.onerror=null;"
+                 style="width: 100%; height: 250px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; background: #fdfdfd;">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            
+            ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
+            
+            ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
+            
+            <p class="product-price">${product.price} ₽</p>
+            <button class="btn add-to-cart-btn" data-product-id="${product.id}">В корзину</button>
+        `;
+        card.querySelector('.aroma-list')?.addEventListener('click', (e) => {
+            const chip = e.target.closest('.aroma-chip');
+            if (chip && card.querySelector('.aroma-list').contains(chip)) {
+                window.selectAroma(chip, chip.textContent);
+            }
+        });
+        card.querySelector('.color-list')?.addEventListener('click', (e) => {
+            const swatch = e.target.closest('.color-swatch');
+            if (swatch && card.querySelector('.color-list').contains(swatch)) {
+                window.selectColor(swatch, swatch.title);
+            }
+        });
+        const btn = card.querySelector('.add-to-cart-btn');
+        btn.addEventListener('click', () => {
+            const color = card.dataset.selectedColor;
+            console.log('Выбранный цвет:', color);
+            window.addToCart(product.id);
+        });
+        container.appendChild(card);
+    }
 });
 
 window.selectAroma = (el, aroma) => {
