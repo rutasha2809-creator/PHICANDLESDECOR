@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = 'product-card';
         card.dataset.productId = product.id;
 
-        const aromaOptions = (product.aroma_options || []).map(aroma => `<div class="aroma-chip" role="button" tabindex="0">${aroma}</div>`).join('');
+        const aromaOptions = (product.aroma_options || []).map(aroma => `<option value="${aroma}">${aroma}</option>`).join('');
         const colorOptions = (product.color_options || []).map(color => `<div class="color-swatch" role="button" tabindex="0" style="background:${colorMap[color.toLowerCase()] || '#ccc'}" title="${color}"></div>`).join('');
 
         card.innerHTML = `
@@ -71,18 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3 class="product-name">${product.name}</h3>
             <p class="product-description">${product.description}</p>
             
-            ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выберите аромат:</label><div class="aroma-list">${aromaOptions}</div><p class="selected-aroma" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
+            ${product.has_aroma ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выберите аромат:</label><select class="aroma-select"><option value="" disabled selected>Выберите аромат</option>${aromaOptions}</select></div>` : ''}
             
             ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
             
             <p class="product-price">${product.price} ₽</p>
             <button class="btn add-to-cart-btn" data-product-id="${product.id}">В корзину</button>
         `;
-        card.querySelector('.aroma-list')?.addEventListener('click', (e) => {
-            const chip = e.target.closest('.aroma-chip');
-            if (chip && card.querySelector('.aroma-list').contains(chip)) {
-                window.selectAroma(chip, chip.textContent);
-            }
+        card.querySelector('.aroma-select')?.addEventListener('change', (e) => {
+            window.selectAromaFromDropdown(e.target, e.target.value);
         });
         card.querySelector('.color-list')?.addEventListener('click', (e) => {
             const swatch = e.target.closest('.color-swatch');
@@ -100,11 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-window.selectAroma = (el, aroma) => {
+window.selectAromaFromDropdown = (el, aroma) => {
     const parent = el.closest('.product-card');
-    parent.querySelectorAll('.aroma-chip').forEach(c => c.classList.remove('selected'));
-    el.classList.add('selected');
-    parent.querySelector('.selected-aroma').textContent = `Аромат: ${aroma}`;
     parent.dataset.selectedAroma = aroma;
     console.log('Selected Aroma:', aroma);
 };
