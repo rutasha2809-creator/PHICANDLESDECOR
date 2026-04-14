@@ -106,9 +106,9 @@ h4 {
 
 /* Уменьшенный баннер */
 .hero-banner {
-    height: 66.67vh;
-    /* Уменьшено в 1.5 раза от 100vh */
-    background-size: cover;
+    height: 35vh;
+    /* Уменьшено до 30-35% высоты экрана */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -117,9 +117,10 @@ h4 {
     text-align: center;
     color: #fff;
     position: relative;
-    max-width: 66.67%;
-    /* Уменьшено в 1.5 раза от 100% */
+    max-width: 100%;
     margin: 0 auto;
+    padding-top: 80px;
+    /* Добавлен отступ сверху для фиксированного меню */
 }
 
 .hero-banner::before {
@@ -178,6 +179,14 @@ h4 {
     text-align: center;
     text-decoration: none;
     color: inherit;
+    outline: none;
+    /* Убираем синюю подсветку при фокусе */
+}
+
+/* Убираем синюю подсветку при фокусе для всех кнопок */
+.nav-button:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .nav-button:hover {
@@ -525,7 +534,8 @@ h4 {
 }
 
 /* Dropdown Select for Aromas */
-.aroma-select {
+.aroma-select,
+.aroma-dropdown {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #E5E7EB;
@@ -542,9 +552,48 @@ h4 {
     transition: border-color 0.3s ease;
 }
 
-.aroma-select:focus {
+.aroma-select:focus,
+.aroma-dropdown:focus {
     outline: none;
     border-color: #997950;
+}
+
+/* Стили для выпадающего списка ароматов */
+.aroma-dropdown-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.aroma-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.aroma-dropdown-content.active {
+    display: block;
+}
+
+.aroma-item {
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+    color: #3A3A3A;
+    transition: background-color 0.3s ease;
+    text-align: left;
+}
+
+.aroma-item:hover {
+    background-color: #F8F5F2;
 }
 
 /* Responsive Styles */

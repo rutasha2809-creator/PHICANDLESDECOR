@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body id="top">
     <!-- Фиксированное меню -->
     <header class="header fixed-header">
         <nav class="container nav">
             <div class="logo">PHICANDLES</div>
             <div class="nav-links">
-                <a href="index.html">Главная</a>
+                <a href="#top">Главная</a>
                 <a href="cart.html">Корзина</a>
                 <a href="collaboration.html">Сотрудничество</a>
                 <a href="contacts.html">Контакты</a>
@@ -44,7 +44,7 @@
                     <i class="fas fa-book-open"></i>
                     <span>Каталог</span>
                 </div>
-                <div class="nav-button">
+                <div class="nav-button" id="aromaBtn">
                     <i class="fas fa-air-freshener"></i>
                     <span>Палитра Ароматов</span>
                 </div>
@@ -92,6 +92,18 @@
         </div>
     </div>
 
+    <!-- Выпадающее меню ароматов -->
+    <div class="catalog-dropdown" id="aromaDropdown">
+        <div class="container">
+            <div class="aroma-dropdown-container">
+                <h2 style="margin-bottom: 30px;">Палитра ароматов</h2>
+                <div class="aroma-dropdown-content active" id="aromaList">
+                    <!-- Список ароматов будет загружен динамически -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="container">
         <!-- Раздел "О нас" -->
         <section class="about-section">
@@ -115,7 +127,7 @@
             <div class="footer-content">
                 <div class="footer-logo">PHICANDLES</div>
                 <div class="footer-links">
-                    <a href="index.html">Главная</a>
+                    <a href="#top">Главная</a>
                     <a href="catalog.html">Каталог</a>
                     <a href="cart.html">Корзина</a>
                     <a href="tips.html">Полезные советы</a>
@@ -155,13 +167,41 @@
         const catalogDropdown = document.getElementById('catalogDropdown');
 
         catalogBtn.addEventListener('click', function () {
+            aromaDropdown.classList.remove('active');
             catalogDropdown.classList.toggle('active');
         });
 
-        // Закрытие выпадающего меню при клике вне его
+        // Выпадающее меню ароматов
+        const aromaBtn = document.getElementById('aromaBtn');
+        const aromaDropdown = document.getElementById('aromaDropdown');
+        const aromaList = document.getElementById('aromaList');
+
+        // Загрузка списка ароматов из файла
+        fetch('List of fragrances.txt')
+            .then(response => response.text())
+            .then(data => {
+                const aromas = data.split('\n').filter(aroma => aroma.trim() !== '');
+                aromaList.innerHTML = aromas.map(aroma =>
+                    `<a href="#" class="aroma-item">${aroma}</a>`
+                ).join('');
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки списка ароматов:', error);
+                aromaList.innerHTML = '<p>Не удалось загрузить список ароматов</p>';
+            });
+
+        aromaBtn.addEventListener('click', function () {
+            catalogDropdown.classList.remove('active');
+            aromaDropdown.classList.toggle('active');
+        });
+
+        // Закрытие выпадающих меню при клике вне их
         document.addEventListener('click', function (event) {
             if (!catalogBtn.contains(event.target) && !catalogDropdown.contains(event.target)) {
                 catalogDropdown.classList.remove('active');
+            }
+            if (!aromaBtn.contains(event.target) && !aromaDropdown.contains(event.target)) {
+                aromaDropdown.classList.remove('active');
             }
         });
 
