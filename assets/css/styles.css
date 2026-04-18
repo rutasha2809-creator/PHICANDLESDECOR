@@ -130,11 +130,13 @@ h4 {
     background: rgba(0, 0, 0, 0.3);
 }
 
-/* Увеличенный баннер */
+/* Полноэкранный баннер */
 .hero-banner {
-    min-height: 60vh;
-    /* Увеличено до 60% высоты экрана */
-    background-size: contain;
+    height: 60vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -143,12 +145,11 @@ h4 {
     text-align: center;
     color: #fff;
     position: relative;
-    max-width: 100%;
-    margin: 0 auto;
     padding-top: 80px;
     /* Отступ сверху для фиксированного меню */
-    aspect-ratio: auto;
-    /* Сохранение пропорций */
+    object-fit: cover;
+    left: 0;
+    right: 0;
 }
 
 .hero-banner::before {
@@ -185,9 +186,11 @@ h4 {
 
 /* Quick Navigation */
 .quick-nav {
-    background-color: #fff;
+    background-color: #FFFDF8;
+    /* Светло-кремовый фон */
     padding: 15px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
 }
 
 .nav-buttons {
@@ -195,6 +198,9 @@ h4 {
     justify-content: center;
     gap: 15px;
     flex-direction: row;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .nav-button {
@@ -213,6 +219,7 @@ h4 {
     outline: none;
     box-shadow: none;
     font-size: 13px;
+    width: 150px;
 }
 
 /* Убираем синюю подсветку при фокусе для всех кнопок */
@@ -504,7 +511,7 @@ h4 {
 
 /* Footer */
 .footer {
-    padding: 60px 0 30px;
+    padding: 40px 0 20px;
     background: #3A3A3A;
     color: #fff;
 }
@@ -514,7 +521,7 @@ h4 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .footer-logo {
@@ -526,8 +533,7 @@ h4 {
 }
 
 .footer-links {
-    display: flex;
-    gap: 20px;
+    display: none;
 }
 
 .footer-links a {
@@ -560,10 +566,22 @@ h4 {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom .legal-links {
+    display: flex;
+    gap: 20px;
 }
 
 .footer-bottom a {
@@ -669,6 +687,7 @@ h4 {
 
     .nav-button {
         flex: 0 0 auto;
+        max-width: 70%;
     }
 
     .footer-content {
@@ -677,9 +696,13 @@ h4 {
         text-align: center;
     }
 
-    .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom .legal-links {
+        margin-top: 10px;
     }
 }
 

@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ${product.has_color ? `<div style="margin-bottom: 15px;"><label style="font-size: 0.8rem; display:block; margin-bottom: 5px;">Выбери цвет:</label><div class="color-list">${colorOptions}</div><p class="selected-color" style="font-size: 0.7rem; color: #997950; margin-top:5px;"></p></div>` : ''}
             
             <p class="product-price">${product.price} ₽</p>
-            <button class="btn add-to-cart-btn" data-product-id="${product.id}">В корзину</button>
         `;
         card.querySelector('.aroma-select')?.addEventListener('change', (e) => {
             window.selectAromaFromDropdown(e.target, e.target.value);
@@ -86,12 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (swatch && card.querySelector('.color-list').contains(swatch)) {
                 window.selectColor(swatch, swatch.title);
             }
-        });
-        const btn = card.querySelector('.add-to-cart-btn');
-        btn.addEventListener('click', () => {
-            const color = card.dataset.selectedColor;
-            console.log('Выбранный цвет:', color);
-            window.addToCart(product.id);
         });
         container.appendChild(card);
     }
@@ -110,15 +103,4 @@ window.selectColor = (el, color) => {
     parent.querySelector('.selected-color').textContent = `Цвет: ${color}`;
     parent.dataset.selectedColor = color;
     console.log('Selected Color:', color);
-};
-
-window.addToCart = (productId) => {
-    const card = document.querySelector(`[data-product-id="${productId}"]`);
-    const aroma = card.dataset.selectedAroma;
-    const color = card.dataset.selectedColor;
-
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ productId, aroma, color });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`Товар добавлен: ${card.querySelector('.product-name').textContent}${aroma ? ' / ' + aroma : ''}${color ? ' / ' + color : ''}`);
 };
